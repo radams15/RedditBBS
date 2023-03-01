@@ -4,19 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8728a6b9-f18e-410a-ae3d-4626abe08d2e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uk/co/therhys/ClientConnection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uk/co/therhys/ClientListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uk/co/therhys/Reddit/Client.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uk/co/therhys/Reddit/RedditSettings.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uk/co/therhys/RedditBBS.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/META-INF/maven/archetype.xml" afterDir="false" />
+    <list default="true" id="8728a6b9-f18e-410a-ae3d-4626abe08d2e" name="Changes" comment="Add JRAW repo.">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/therhys/ClientConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/therhys/ClientConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/therhys/ClientListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/therhys/ClientListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/therhys/Reddit/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/therhys/Reddit/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/therhys/Reddit/RedditSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/therhys/Reddit/RedditSettings.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -102,11 +96,31 @@
       <option name="presentableId" value="Default" />
       <updated>1677610606467</updated>
       <workItem from="1677610608239" duration="1909000" />
-      <workItem from="1677658756951" duration="1244000" />
+      <workItem from="1677658756951" duration="2778000" />
     </task>
+    <task id="LOCAL-00001" summary="Basic layout of socket listeners and Reddit API setup.">
+      <created>1677660021373</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1677660021373</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Add JRAW repo.">
+      <created>1677660044751</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1677660044751</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Basic layout of socket listeners and Reddit API setup." />
+    <MESSAGE value="Add JRAW repo." />
+    <option name="LAST_COMMIT_MESSAGE" value="Add JRAW repo." />
   </component>
 </project>

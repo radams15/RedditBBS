@@ -17,6 +17,7 @@ public class ClientListener {
         try(ServerSocket ss = new ServerSocket(port)){
             Socket sock;
             ClientConnection clientConnection;
+
             while(true){
                 sock = ss.accept();
 
