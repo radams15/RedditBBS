@@ -1,15 +1,10 @@
 package uk.co.therhys;
 
-import net.dean.jraw.models.Listing;
-import net.dean.jraw.models.Submission;
 import uk.co.therhys.Reddit.Client;
+import uk.co.therhys.UI.MainLoop;
 
 import java.io.*;
 import java.net.Socket;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.atomic.AtomicInteger;
-import java.util.concurrent.atomic.AtomicReference;
 
 public class ClientConnection extends Thread {
     private final Socket sock;
@@ -27,63 +22,29 @@ public class ClientConnection extends Thread {
         writer = new BufferedWriter(new OutputStreamWriter(sock.getOutputStream()));
     }
 
-    private void writeln(String val) throws IOException {
+    public void write(String val) throws IOException {
+        writer.write(val);
+        writer.flush();
+    }
+
+    public void writeln(String val) throws IOException {
         writer.write(val);
         writer.write("\r\n");
         writer.flush();
     }
 
-    private void writeln(String val, Object ... args) throws IOException {
+    public void writeln(String val, Object ... args) throws IOException {
         writer.write(String.format(val, args));
         writer.write("\r\n");
         writer.flush();
     }
 
-    private void writeln() throws IOException {
+    public void writeln() throws IOException {
         writeln("");
     }
 
-    private void hotPosts(){
-        int perPage = 5;
-
-        List<Submission> pageSubs = new ArrayList<>();
-        AtomicInteger i = new AtomicInteger();
-
-        for(Listing<Submission> submissions : client.getHot(perPage)){
-            pageSubs.clear();
-            i.set(1);
-
-            for(Submission submission : submissions){
-                try {
-                    pageSubs.add(submission);
-                    writeln("[%d] %s by %s", i.get(), submission.getTitle(), submission.getAuthor());
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
-                i.addAndGet(1);
-            }
-
-            try {
-                writeln("[id/N/R]"); // post id or next page or return.
-                String feedback = reader.readLine();
-                if(feedback.toLowerCase().equals("r")){
-                    return;
-                }
-
-                try{
-                    int postId = Integer.parseInt(feedback);
-
-                    if(postId > 0 && postId < perPage){
-                        writeln("Chosen: post %d", postId);
-                    }
-                }catch (NumberFormatException ex){
-                    // Go to next post
-                }
-            }catch (IOException e){
-                e.printStackTrace();
-            }
-        }
+    public String readln() throws IOException {
+        return reader.readLine();
     }
 
     @Override
@@ -94,22 +55,16 @@ public class ClientConnection extends Thread {
             writeln("******* Welcome to RedditBBS! *******");
             writeln();
 
-            String test = reader.readLine();
-            System.out.println(test);
-
-            hotPosts();
-
-            while (running) {
-                //writer.write("Hello!!");
-            }
+            new MainLoop(this, client)
+                    .run();
         }catch (IOException e){
             //e.printStackTrace();
+        }
 
-            try {
-                close();
-            } catch (IOException ex) {
-                ex.printStackTrace();
-            }
+        try {
+            close();
+        } catch (IOException ex) {
+            ex.printStackTrace();
         }
     }
 
