@@ -4,12 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8728a6b9-f18e-410a-ae3d-4626abe08d2e" name="Changes" comment="Add method to browse hot posts to ClientConnection.">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uk/co/therhys/UI/MainLoop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uk/co/therhys/UI/PostViewer.java" afterDir="false" />
+    <list default="true" id="8728a6b9-f18e-410a-ae3d-4626abe08d2e" name="Changes" comment="Modularise, add main menu to scroll through posts.">
+      <change afterPath="$PROJECT_DIR$/src/main/java/uk/co/therhys/BbsSettings.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/uk/co/therhys/UI/Pager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/therhys/ClientConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/therhys/ClientConnection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/therhys/Reddit/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/therhys/Reddit/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/therhys/UI/MainLoop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/therhys/UI/MainLoop.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/therhys/UI/PostViewer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/therhys/UI/PostViewer.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -96,7 +98,7 @@
       <updated>1677610606467</updated>
       <workItem from="1677610608239" duration="1909000" />
       <workItem from="1677658756951" duration="2859000" />
-      <workItem from="1677680879704" duration="2386000" />
+      <workItem from="1677680879704" duration="7157000" />
     </task>
     <task id="LOCAL-00001" summary="Basic layout of socket listeners and Reddit API setup.">
       <created>1677660021373</created>
@@ -119,7 +121,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677661599197</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Modularise, add main menu to scroll through posts.">
+      <created>1677683528567</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1677683528567</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -129,6 +138,7 @@
     <MESSAGE value="Basic layout of socket listeners and Reddit API setup." />
     <MESSAGE value="Add JRAW repo." />
     <MESSAGE value="Add method to browse hot posts to ClientConnection." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add method to browse hot posts to ClientConnection." />
+    <MESSAGE value="Modularise, add main menu to scroll through posts." />
+    <option name="LAST_COMMIT_MESSAGE" value="Modularise, add main menu to scroll through posts." />
   </component>
 </project>

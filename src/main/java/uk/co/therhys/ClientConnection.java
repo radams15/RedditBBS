@@ -11,7 +11,7 @@ public class ClientConnection extends Thread {
     private final BufferedReader reader;
     private final BufferedWriter writer;
 
-    private Client client;
+    public Client client;
 
     private boolean running = true;
     public ClientConnection(Socket sock) throws IOException {
@@ -23,20 +23,17 @@ public class ClientConnection extends Thread {
     }
 
     public void write(String val) throws IOException {
-        writer.write(val);
+        writer.write(val.replaceAll("\n", "\r\n"));
         writer.flush();
     }
 
     public void writeln(String val) throws IOException {
-        writer.write(val);
-        writer.write("\r\n");
-        writer.flush();
+        write(val);
+        write("\r\n");
     }
 
     public void writeln(String val, Object ... args) throws IOException {
-        writer.write(String.format(val, args));
-        writer.write("\r\n");
-        writer.flush();
+        writeln(String.format(val, args));
     }
 
     public void writeln() throws IOException {
@@ -49,7 +46,7 @@ public class ClientConnection extends Thread {
 
     @Override
     public void run() {
-        client = new Client(SECRETS.settings);
+        client = new Client(SECRETS.settings, new BbsSettings("user", "pass", new int[]{80, 24}, true));
 
         try {
             writeln("******* Welcome to RedditBBS! *******");

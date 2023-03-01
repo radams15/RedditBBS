@@ -32,11 +32,12 @@ public class MainLoop {
 
         for(Listing<Submission> submissions : client.getHot(perPage)){
             pageSubs.clear();
-            i=0;
             page++;
             onSamePage = true;
 
             while(onSamePage) {
+                i=0;
+
                 try {
                     conn.writeln("****** Page %d ******", page);
                 } catch (IOException e) {
@@ -46,27 +47,29 @@ public class MainLoop {
                 for (Submission submission : submissions) {
                     try {
                         pageSubs.add(submission);
-                        conn.writeln("[%d] %s %s by %s", i, (submission.isSelfPost() ? "(st)" : ""), submission.getTitle(), submission.getAuthor());
+                        if(!client.settings.isSelftextOnly() || submission.isSelfPost() ){ // If is selfpost or just show all posts then show.
+                            conn.writeln("[%d] %s %s by %s", i, (submission.isSelfPost() ? "(st)" : ""), submission.getTitle(), submission.getAuthor());
+                        }
+                        i++;
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
-
-                    i++;
                 }
 
                 try {
 
                     conn.writeln();
-                    conn.write("[id/N/R]    "); // post id or next page or return.
+                    conn.write("[id/N/Q]    "); // post id or next page or Quit.
                     String feedback = conn.readln();
-                    if (feedback.toLowerCase().equals("r")) {
+
+                    if (feedback.toLowerCase().equals("q")) {
                         return;
                     }
 
                     try {
                         int postId = Integer.parseInt(feedback);
 
-                        if (postId > 0 && postId < perPage) {
+                        if (postId >= 0 && postId < perPage) {
                             Submission sub = submissions.get(postId);
 
                             new PostViewer(conn, sub).run(); // View the post

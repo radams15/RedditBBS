@@ -14,9 +14,8 @@ public class PostViewer {
     void run(){
         try {
             conn.writeln("Viewing: %s", submission.getTitle());
-            conn.writeln(submission.getSelfText());
 
-            conn.readln();
+            Pager.page(submission.getSelfText(), conn);
         }catch (IOException e){
             e.printStackTrace();
         }

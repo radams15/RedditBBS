@@ -8,13 +8,17 @@ import net.dean.jraw.models.Submission;
 import net.dean.jraw.oauth.Credentials;
 import net.dean.jraw.oauth.OAuthHelper;
 import net.dean.jraw.pagination.DefaultPaginator;
+import uk.co.therhys.BbsSettings;
 
 public class Client {
     private RedditClient reddit = null;
-    public Client(RedditSettings settings){
-        Credentials creds = Credentials.script(settings.getUsername(), settings.getPassword(), settings.getCid(), settings.getSecret());
+    public final BbsSettings settings;
+    public Client(RedditSettings redditSettings, BbsSettings settings){
+        this.settings = settings;
 
-        UserAgent userAgent = new UserAgent("BBS", "uk.co.therhys.RedditBBS", "v0.1", settings.getUsername());
+        Credentials creds = Credentials.script(redditSettings.getUsername(), redditSettings.getPassword(), redditSettings.getCid(), redditSettings.getSecret());
+
+        UserAgent userAgent = new UserAgent("BBS", "uk.co.therhys.RedditBBS", "v0.1", redditSettings.getUsername());
 
         NetworkAdapter adapter = new OkHttpNetworkAdapter(userAgent);
 
