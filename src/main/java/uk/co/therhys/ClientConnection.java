@@ -1,5 +1,7 @@
 package uk.co.therhys;
 
+import uk.co.therhys.Db.DatabaseManager;
+import uk.co.therhys.Db.UserDao;
 import uk.co.therhys.Reddit.Client;
 import uk.co.therhys.UI.MainLoop;
 
@@ -11,15 +13,19 @@ public class ClientConnection extends Thread {
     private final BufferedReader reader;
     private final BufferedWriter writer;
 
+    private final DatabaseManager dbMan;
+
     public Client client;
 
     private boolean running = true;
-    public ClientConnection(Socket sock) throws IOException {
+    public ClientConnection(Socket sock, DatabaseManager dbMan) throws IOException {
         super();
 
         this.sock = sock;
         reader = new BufferedReader(new InputStreamReader(sock.getInputStream()));
         writer = new BufferedWriter(new OutputStreamWriter(sock.getOutputStream()));
+
+        this.dbMan = dbMan;
     }
 
     public void write(String val) throws IOException {
@@ -44,13 +50,34 @@ public class ClientConnection extends Thread {
         return reader.readLine();
     }
 
+    private UserDao.RedditCreds login() throws IOException {
+        write("Username: ");
+        String username = readln();
+
+        write("Password: ");
+        String password = readln();
+
+        return dbMan.userDao().getCreds(new UserDao.User(username, password));
+    }
+
     @Override
     public void run() {
-        client = new Client(SECRETS.settings, new BbsSettings("user", "pass", new int[]{80, 24}, true));
 
         try {
             writeln("******* Welcome to RedditBBS! *******");
             writeln();
+
+            UserDao.RedditCreds creds = login();
+
+            if(creds == null) {
+                writeln("Invalid username or password, terminating.");
+                close();
+                return;
+            }
+
+            writeln("Logged in as: %s", creds.getUsername());
+
+            client = new Client(creds, new BbsSettings(new int[]{80, 24}, true));
 
             new MainLoop(this, client)
                     .run();

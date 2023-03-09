@@ -6,8 +6,6 @@ import lombok.Data;
 @Data
 @AllArgsConstructor
 public class BbsSettings {
-    String username;
-    String password;
     int[] termSize;
     boolean selftextOnly;
 }
