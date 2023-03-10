@@ -4,20 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8728a6b9-f18e-410a-ae3d-4626abe08d2e" name="Changes" comment="Add pagination to the number of rows and cols of the client.">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/sqldialects.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uk/co/therhys/Db/DatabaseManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/uk/co/therhys/Db/UserDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+    <list default="true" id="8728a6b9-f18e-410a-ae3d-4626abe08d2e" name="Changes" comment="Now has proper database support, cannot currently add users though.">
+      <change afterPath="$PROJECT_DIR$/.github/workflows/container.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.github/workflows/main.yaml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Containerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/therhys/BbsSettings.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/therhys/BbsSettings.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/therhys/ClientConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/therhys/ClientConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/therhys/ClientListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/therhys/ClientListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/therhys/Reddit/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/therhys/Reddit/Client.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/therhys/Reddit/RedditSettings.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/therhys/RedditBBS.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/therhys/RedditBBS.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,6 +30,11 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
     <option name="importingSettings">
       <MavenImportingSettings>
         <option name="workspaceImportEnabled" value="true" />
@@ -58,6 +55,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/rhys/scripts/RedditBBS",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -107,7 +105,8 @@
       <workItem from="1677658756951" duration="2859000" />
       <workItem from="1677680879704" duration="7179000" />
       <workItem from="1678359620837" duration="8000" />
-      <workItem from="1678359930655" duration="2551000" />
+      <workItem from="1678359930655" duration="2587000" />
+      <workItem from="1678464433793" duration="1195000" />
     </task>
     <task id="LOCAL-00001" summary="Basic layout of socket listeners and Reddit API setup.">
       <created>1677660021373</created>
@@ -144,7 +143,14 @@
       <option name="project" value="LOCAL" />
       <updated>1677689784656</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Now has proper database support, cannot currently add users though.">
+      <created>1678362511530</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1678362511530</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -156,6 +162,7 @@
     <MESSAGE value="Add method to browse hot posts to ClientConnection." />
     <MESSAGE value="Modularise, add main menu to scroll through posts." />
     <MESSAGE value="Add pagination to the number of rows and cols of the client." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add pagination to the number of rows and cols of the client." />
+    <MESSAGE value="Now has proper database support, cannot currently add users though." />
+    <option name="LAST_COMMIT_MESSAGE" value="Now has proper database support, cannot currently add users though." />
   </component>
 </project>
