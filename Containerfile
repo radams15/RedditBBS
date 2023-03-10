@@ -1,6 +1,8 @@
 FROM docker.io/eclipse-temurin:11-jre
 
-COPY target/RedditBBS-*.jar /app/RedditBBS.jar
+RUN mkdir -p /app
+
+COPY ./target/RedditBBS-0.1.jar /app/RedditBBS.jar
 
 WORKDIR /app
 

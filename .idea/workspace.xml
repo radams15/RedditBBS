@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8728a6b9-f18e-410a-ae3d-4626abe08d2e" name="Changes" comment="Add Containerfile to build container, add workflow to build and publish on push.">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/container.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.github/workflows/main.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/main.yaml" afterDir="false" />
+    <list default="true" id="8728a6b9-f18e-410a-ae3d-4626abe08d2e" name="Changes" comment="Place workflows so that image is built after the jar is built.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Containerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Containerfile" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -104,7 +103,7 @@
       <workItem from="1677680879704" duration="7179000" />
       <workItem from="1678359620837" duration="8000" />
       <workItem from="1678359930655" duration="2587000" />
-      <workItem from="1678464433793" duration="1301000" />
+      <workItem from="1678464433793" duration="1787000" />
     </task>
     <task id="LOCAL-00001" summary="Basic layout of socket listeners and Reddit API setup.">
       <created>1677660021373</created>
@@ -155,7 +154,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678465654395</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Place workflows so that image is built after the jar is built.">
+      <created>1678465751759</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1678465751759</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,6 +175,7 @@
     <MESSAGE value="Add pagination to the number of rows and cols of the client." />
     <MESSAGE value="Now has proper database support, cannot currently add users though." />
     <MESSAGE value="Add Containerfile to build container, add workflow to build and publish on push." />
-    <option name="LAST_COMMIT_MESSAGE" value="Add Containerfile to build container, add workflow to build and publish on push." />
+    <MESSAGE value="Place workflows so that image is built after the jar is built." />
+    <option name="LAST_COMMIT_MESSAGE" value="Place workflows so that image is built after the jar is built." />
   </component>
 </project>
