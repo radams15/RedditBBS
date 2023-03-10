@@ -44,5 +44,6 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
+          context: .
           file: 'Containerfile'
           tags: radams15/redditbbs:latest
