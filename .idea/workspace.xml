@@ -4,14 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8728a6b9-f18e-410a-ae3d-4626abe08d2e" name="Changes" comment="Now shows the full x posts per page even when only selftexts are wanted.">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="8728a6b9-f18e-410a-ae3d-4626abe08d2e" name="Changes" comment="Remove null chars from input to allow DOS to authenticate.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/therhys/ClientConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/therhys/UI/ClientConnection.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/therhys/ClientListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/therhys/ClientListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/therhys/UI/MainLoop.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/therhys/UI/MainLoop.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/therhys/UI/Pager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/therhys/UI/Pager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/therhys/UI/PostViewer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/therhys/UI/PostViewer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/therhys/Reddit/Client.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/therhys/Reddit/Client.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/uk/co/therhys/UI/ClientConnection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/uk/co/therhys/UI/ClientConnection.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +106,7 @@
       <workItem from="1678359930655" duration="2587000" />
       <workItem from="1678464433793" duration="3609000" />
       <workItem from="1678528006140" duration="853000" />
-      <workItem from="1678533776279" duration="2877000" />
+      <workItem from="1678533776279" duration="3137000" />
     </task>
     <task id="LOCAL-00001" summary="Basic layout of socket listeners and Reddit API setup.">
       <created>1677660021373</created>
@@ -196,7 +192,14 @@
       <option name="project" value="LOCAL" />
       <updated>1678535375869</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Remove null chars from input to allow DOS to authenticate.">
+      <created>1678536697023</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1678536697023</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -214,6 +217,7 @@
     <MESSAGE value="Update Containerfile." />
     <MESSAGE value="Force container to use ipv4." />
     <MESSAGE value="Now shows the full x posts per page even when only selftexts are wanted." />
-    <option name="LAST_COMMIT_MESSAGE" value="Now shows the full x posts per page even when only selftexts are wanted." />
+    <MESSAGE value="Remove null chars from input to allow DOS to authenticate." />
+    <option name="LAST_COMMIT_MESSAGE" value="Remove null chars from input to allow DOS to authenticate." />
   </component>
 </project>

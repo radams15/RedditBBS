@@ -59,11 +59,11 @@ public class ClientConnection extends Thread {
     private UserDao.RedditCreds login() throws IOException {
         write("Username: ");
         String username = readln();
+        writeln();
 
         write("Password: ");
         String password = readln();
-
-        System.out.println("Username was: '" + username + "', Password was: '" + password + "'");
+        writeln();
 
         return dbMan.userDao().getCreds(new UserDao.User(username, password));
     }

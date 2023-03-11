@@ -11,8 +11,6 @@ import net.dean.jraw.models.Submission;
 import net.dean.jraw.oauth.Credentials;
 import net.dean.jraw.oauth.OAuthHelper;
 import net.dean.jraw.pagination.DefaultPaginator;
-import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import uk.co.therhys.BbsSettings;
 import uk.co.therhys.Db.UserDao;
 
