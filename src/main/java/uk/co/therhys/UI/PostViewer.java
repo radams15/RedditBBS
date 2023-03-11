@@ -15,7 +15,13 @@ public class PostViewer {
         try {
             conn.writeln("Viewing: %s", submission.getTitle());
 
-            Pager.page(submission.getSelfText(), conn);
+            String selftext = submission.getSelfText();
+
+            if(selftext != null) {
+                Pager.page(submission.getSelfText(), conn);
+            } else {
+                conn.writeln("Post has no selftext.");
+            }
         }catch (IOException e){
             e.printStackTrace();
         }

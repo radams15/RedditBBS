@@ -22,6 +22,10 @@ public class MainLoop {
         hotPosts();
     }
 
+    private boolean shouldSelectPost(Submission sub){
+        return (!client.settings.isSelftextOnly()) || sub.isSelfPost();
+    }
+
     private void hotPosts(){
         int perPage = 5;
 
@@ -30,7 +34,8 @@ public class MainLoop {
         int page = 0;
         boolean onSamePage;
 
-        for(Listing<Submission> submissions : client.getHot(perPage)){
+        for (Client.CustomPaginator it = client.getHot(perPage, this::shouldSelectPost); it.hasNext(); ) {
+            List<Submission> submissions = it.next();
             pageSubs.clear();
             page++;
             onSamePage = true;
@@ -47,9 +52,7 @@ public class MainLoop {
                 for (Submission submission : submissions) {
                     try {
                         pageSubs.add(submission);
-                        if(!client.settings.isSelftextOnly() || submission.isSelfPost() ){ // If is selfpost or just show all posts then show.
-                            conn.writeln("[%d] %s %s by %s", i, (submission.isSelfPost() ? "(st)" : ""), submission.getTitle(), submission.getAuthor());
-                        }
+                        conn.writeln("[%d] %s %s by %s", i, (submission.isSelfPost() ? "(st)" : ""), submission.getTitle(), submission.getAuthor());
                         i++;
                     } catch (IOException e) {
                         e.printStackTrace();
