@@ -1,8 +1,6 @@
 package uk.co.therhys.UI;
 
-import net.dean.jraw.models.Listing;
 import net.dean.jraw.models.Submission;
-import uk.co.therhys.ClientConnection;
 import uk.co.therhys.Reddit.Client;
 
 import java.io.IOException;

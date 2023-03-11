@@ -1,6 +1,7 @@
 package uk.co.therhys;
 
 import uk.co.therhys.Db.DatabaseManager;
+import uk.co.therhys.UI.ClientConnection;
 
 import java.io.IOException;
 import java.net.ServerSocket;

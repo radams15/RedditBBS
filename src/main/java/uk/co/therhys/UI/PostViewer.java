@@ -2,7 +2,6 @@ package uk.co.therhys.UI;
 
 import lombok.AllArgsConstructor;
 import net.dean.jraw.models.Submission;
-import uk.co.therhys.ClientConnection;
 
 import java.io.IOException;
 

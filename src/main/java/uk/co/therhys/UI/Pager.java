@@ -1,7 +1,5 @@
 package uk.co.therhys.UI;
 
-import uk.co.therhys.ClientConnection;
-
 import java.io.IOException;
 
 public class Pager {

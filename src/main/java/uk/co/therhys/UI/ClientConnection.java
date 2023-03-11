@@ -1,5 +1,6 @@
-package uk.co.therhys;
+package uk.co.therhys.UI;
 
+import uk.co.therhys.BbsSettings;
 import uk.co.therhys.Db.DatabaseManager;
 import uk.co.therhys.Db.UserDao;
 import uk.co.therhys.Reddit.Client;
@@ -47,7 +48,12 @@ public class ClientConnection extends Thread {
     }
 
     public String readln() throws IOException {
-        return reader.readLine();
+        String out = reader.readLine().replaceAll("\r", "");
+
+        if(out.charAt(0) == 0)
+            out = out.substring(1);
+
+        return out;
     }
 
     private UserDao.RedditCreds login() throws IOException {
@@ -56,6 +62,8 @@ public class ClientConnection extends Thread {
 
         write("Password: ");
         String password = readln();
+
+        System.out.println("Username was: '" + username + "', Password was: '" + password + "'");
 
         return dbMan.userDao().getCreds(new UserDao.User(username, password));
     }
